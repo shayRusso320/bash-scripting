@@ -1,0 +1,14 @@
+#!/bin/bash
+
+mkdir five
+
+for i in {1..5}
+do
+	touch five/file$i
+	for j in {1..$i}
+	do
+		echo $i >> file$i
+	done
+done
+
+	
