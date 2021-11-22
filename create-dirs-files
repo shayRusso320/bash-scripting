@@ -1,14 +1,15 @@
 #!/bin/bash
-
 mkdir five
 
-for i in {1..5}
+for folder_index in {1..5}
 do
-	touch five/file$i
-	for j in {1..$i}
-	do
-		echo $i >> five/file$i
-	done
+        mkdir five/dir$folder_index
+        for file_index in {1..5}
+        do
+                touch five/dir$folder_index/file$file_index
+                for line in $(seq $file_index)
+                do
+                        echo $file_index >> five/dir$folder_index/file$file_index
+                done
+        done
 done
-
-	
